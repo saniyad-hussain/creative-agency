@@ -1,0 +1,17 @@
+.ourWorks-section {
+	height: 600px;
+	background: #111430;
+	margin-top: 80px;
+}
+.our-works {
+	font-family: 'Poppins', sans-serif;
+	color: #ffffff !important;
+	font-weight: 700;
+}
+.our-works span {
+	color: #7ab259 !important;
+}
+.slider-container img {
+	width: auto;
+	margin: 0 auto;
+}

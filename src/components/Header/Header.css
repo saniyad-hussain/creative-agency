@@ -1,0 +1,50 @@
+.banner-area {
+	background-color: #fbd062;
+	height: 500px;
+	shape-outside: polygon(0 0, 0 200px, 300px 600px);
+}
+.outside {
+	background: #fbd062;
+	position: relative;
+	width: 100%;
+	height: 600px;
+	margin-bottom: 20px;
+	transform: perspective(80em) rotateY(8deg);
+	transform-origin: top right;
+}
+
+.inside {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10px;
+}
+
+.navbar-nav {
+	margin-left: auto;
+}
+.navbar-brand img {
+	height: 48px;
+}
+.nav-link {
+	margin-right: 20px !important;
+	font-family: 'Poppins', sans-serif;
+	color: #111430 !important;
+}
+.login-btn {
+	background-color: #111430;
+	color: white;
+	padding: 5px 15px;
+	border-radius: 5px;
+}
+
+.partner-container {
+	height: 90px;
+	margin: 120px auto 80px auto;
+}
+.partner-logo img {
+	height: 50px;
+	margin: 10px 35px;
+}
