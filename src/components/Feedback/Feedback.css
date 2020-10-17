@@ -1,27 +1,32 @@
-.reviews-section {
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+.feedback-section {
 	height: auto;
 	margin: 40px auto;
 }
-.reviews-head {
+.feedback-head {
 	font-family: 'Poppins', sans-serif;
 	color: #111430 !important;
 	font-weight: 700;
 	margin: 15px 0;
 }
-.reviews-head span {
+.feedback-head span {
 	color: #7ab259 !important;
 }
 .card-row {
 	display: flex;
 	justify-content: center;
 }
-.reviews-card {
+.feedback-card {
 	border: 1px solid lightgray;
 	padding: 10px;
+	height: 170px;
 	margin: 10px 30px;
+	overflow: hidden;
 }
 .client-info img {
 	height: 60px;
+	width: 25%;
+	border-radius: 50%;
 }
 .client-text {
 	margin-left: 15px;
@@ -39,7 +44,7 @@
 	font-size: 15px;
 	font-weight: 500;
 }
-.reviews-text p {
+.feedback-text p {
 	font-family: 'Poppins', sans-serif;
 	font-size: 13px;
 }

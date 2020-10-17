@@ -23,7 +23,7 @@
 	transition: 0.7s ease-in-out;
 }
 .service-card img:hover {
-	transform: rotate(360deg);
+	transform: translate(10px, -5px);
 }
 .service-title {
 	font-family: 'Poppins', sans-serif;

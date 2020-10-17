@@ -1,12 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../images/logos/logo.png';
+import './Navbar.css';
+import mainLogo from '../../images/logos/logo.png';
+import jwt_decode from 'jwt-decode';
+import { userContext } from '../../App';
 
 const Navbar = () => {
+	const [loggedInUser, setloggedInUser] = useContext(userContext);
+	const isLoggedIn = () => {
+		const token = sessionStorage.getItem('token');
+		if (!token) {
+			return false;
+		}
+		const decodedToken = jwt_decode(token);
+		// get current time
+		const currentTime = new Date().getTime() / 1000;
+		// compare the expiration time with the current time
+		// will return false if expired and will return true if not expired
+		return decodedToken.exp > currentTime;
+	};
 	return (
 		<nav class="container navbar navbar-expand-lg navbar-light pt-2">
 			<Link class="navbar-brand" to="/">
-				<img src={logo} alt="" />
+				<img src={mainLogo} alt="" />
 			</Link>
 			<button
 				class="navbar-toggler"
@@ -31,21 +47,38 @@ const Navbar = () => {
 							Our Portfolio
 						</Link>
 					</li>
-					<li class="nav-item">
-						<Link class="nav-link" to="/">
-							Our Team
-						</Link>
-					</li>
+
 					<li class="nav-item">
 						<Link class="nav-link" to="/">
 							Contact Us
 						</Link>
 					</li>
-					<li class="nav-item">
-						<Link class="nav-link" to="/">
-							<span className="login-btn">Login</span>
-						</Link>
-					</li>
+					{loggedInUser.email || isLoggedIn() ? (
+						<div className="d-flex">
+							<li className="nav-item">
+								<p className="nav-link">{loggedInUser.name}</p>
+							</li>
+							<li class="nav-item">
+								<Link className="nav-link" to="/">
+									<span
+										onClick={() => {
+											setloggedInUser({});
+											sessionStorage.setItem('token', '');
+										}}
+										className="logout-btn"
+									>
+										LogOut
+									</span>
+								</Link>
+							</li>
+						</div>
+					) : (
+						<li class="nav-item">
+							<Link class="nav-link" to="/login">
+								<span className="login-btn">Login</span>
+							</Link>
+						</li>
+					)}
 				</ul>
 			</div>
 		</nav>

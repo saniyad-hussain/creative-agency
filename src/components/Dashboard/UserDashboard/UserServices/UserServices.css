@@ -1,0 +1,18 @@
+.main-col {
+	position: absolute;
+	display: block;
+}
+.myService-card {
+	height: 160px;
+	background: white;
+	box-shadow: 0 0 10px rgb(143, 135, 135);
+	border-radius: 5px;
+}
+.myService-card p {
+	font-family: 'Poppins', sans-serif;
+}
+.myService-card h6 {
+	font-family: 'Poppins', sans-serif;
+	color: #111430;
+	font-weight: 800;
+}
